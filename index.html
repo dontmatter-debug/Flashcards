@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashCards</title>
+
+		<link rel="icon" href="flashcards.png" type="image/icon type">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+	<header>
+	<div class="container">
+	<div class="nav">
+		<h1>
+			FlashCards
+		</h1>
+			<div>
+			<button onclick="newCard()">New card</button>
+			<button onclick="delCard()">Delete cards</button>
+			</div>
+	</div>
+	</div>
+	</header>
+	<div class="container">
+		<div class="create-box" id="create-box">
+			<h2 style="text-align: center;">Create Flashcard</h2>
+
+			<label for="question">Question</label>
+			<textarea id="question"></textarea>
+			<br>
+			<label for="answer">Answer</label>
+			<textarea id="answer"></textarea>
+			<div>
+				<button onclick="
+				if(question.value === ''){
+					alert('please enter a question')
+				} else if(answer.value === ''){
+					alert('please enter an answer')
+				} else {
+					addFlashCard()
+				}
+					">Save</button>
+				<button onclick="hideBox()">Close</button>
+			</div>
+		</div>
+		<div class="flashcards" id="flashcards">
+
+		</div>
+	</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
